@@ -6,6 +6,8 @@ replicaCount: 1
 
 image:
   repository: apache/nifi-registry
+  alpineRepository: alpine
+  alpineGitRepository: alpine/git
   pullPolicy: IfNotPresent
   tag: "0.7.0"
 

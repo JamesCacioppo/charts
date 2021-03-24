@@ -29,7 +29,7 @@ spec:
       initContainers:
         {{- if .Values.flowProvider.git.enabled }}
         - name: git-clone
-          image: alpine/git:v2.26.2
+          image: "{{ .Values.image.alpineGitRepository }}:v2.26.2"
           command:
             - sh
             - -cex
@@ -61,7 +61,7 @@ spec:
         {{- end }}
         {{- if .Values.persistence.enabled }}
         - name: take-data-dir-ownership
-          image: alpine:3.6
+          image: "{{ .Values.image.alpineRepository }}:3.6"
           command:
           command:
             - chown
